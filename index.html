@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Neon Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a class="logo" href="#">⛏ NEON<span>HUB</span></a>
+    <nav>
+      <a href="#home">Головна</a>
+      <a href="#news">Новини</a>
+      <a href="#chat">Чат</a>
+      <a href="#profile">Профіль</a>
+    </nav>
+    <div class="header-actions">
+      <button id="themeBtn">☀️</button>
+      <button id="loginBtn">Увійти</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="tag">MINECRAFT COMMUNITY</span>
+        <h1>ЛАСКАВО ПРОСИМО<br>ДО <span>NEON HUB</span></h1>
+        <p>Твій світ Minecraft починається тут!</p>
+        <button class="primary" onclick="showAuth()">
+          Приєднатися 🚀
+        </button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>⚡ Можливості порталу</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="emoji">📰</div>
+          <h3>Новини</h3>
+          <p>Останні новини зі світу Minecraft.</p>
+        </article>
+        <article class="card">
+          <div class="emoji">👥</div>
+          <h3>Спільнота</h3>
+          <p>Знайомся з іншими гравцями.</p>
+        </article>
+        <article class="card">
+          <div class="emoji">💬</div>
+          <h3>Чат</h3>
+          <p>Спілкуйся з учасниками порталу.</p>
+        </article>
+        <article class="card">
+          <div class="emoji">🏆</div>
+          <h3>Рейтинг</h3>
+          <p>Знаходь активних користувачів.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="news">
+      <h2>🔎 Пошук на порталі</h2>
+      <input id="search" placeholder="Шукай новини або гравців...">
+      <div id="searchResults"></div>
+    </section>
+
+    <section class="section" id="profile">
+      <h2>👤 Мій профіль</h2>
+      <div class="panel" id="profileInfo">
+        <p>Увійди, щоб побачити свій профіль.</p>
+      </div>
+    </section>
+
+    <section class="section" id="chat">
+      <h2>💬 Спільний чат</h2>
+      <div class="chat-box">
+        <div id="messages">
+          <p class="system-message">Вітаємо у Minecraft Neon Hub!</p>
+        </div>
+        <form id="chatForm">
+          <input id="chatInput" placeholder="Напиши повідомлення..." maxlength="300">
+          <button class="primary">Надіслати</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section hidden" id="admin">
+      <h2>🛡️ Адмін-панель</h2>
+      <div class="panel">
+        <h3>Керування порталом</h3>
+        <p>Користувачів: <strong id="userCount">0</strong></p>
+        <input id="announcement" placeholder="Текст новини">
+        <button class="primary" id="addNews">Опублікувати новину</button>
+        <div id="adminNews"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="authModal">
+    <div class="modal-content">
+      <button class="close" onclick="hideAuth()">✕</button>
+      <h2>⚡ NEON HUB</h2>
+      <div class="tabs">
+        <button id="registerTab">Реєстрація</button>
+        <button id="loginTab">Вхід</button>
+      </div>
+      <form id="authForm">
+        <input id="username" placeholder="Твій Minecraft нік" required maxlength="20">
+        <input id="email" type="email" placeholder="Електронна пошта" required>
+        <input id="password" type="password" placeholder="Пароль" required minlength="8">
+        <button class="primary" id="authSubmit">Створити акаунт</button>
+      </form>
+      <p id="authMessage"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>⛏ Minecraft Neon Hub © 2026</p>
+    <p>Неофіційний фанатський портал Minecraft.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
